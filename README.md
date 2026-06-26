@@ -14,8 +14,7 @@ This repository contains the autonomous control logic for a Mavic 2 Pro drone ta
 
 The core operational scripts are located within the `controllers/` directory:
 
-- `**controllers/my_mavic/my_mavic.py`**: Contains the flight control loop, the boustrophedon grid navigation protocol, and the state machine.
-- `**controllers/my_mavic/fire_detector.py**`: Contains the camera-based perception module, utilising HSV colour segmentation to isolate smoke signatures.
+- `**controllers/autonomous_mavic/autonomous_mavic.py`**: Contains the flight control loop, the grid navigation protocol, the camera-based perception module and the state machine.
 
 ### 2. Technical Report
 
