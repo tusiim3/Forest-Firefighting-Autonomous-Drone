@@ -1,0 +1,11 @@
+Webots Proto Cache File version 1.5
+protoFileHash: 41910db2fa98b41a7bcc87a86a0ae462
+needsRobotAncestor: 0
+baseType: Transform
+slotType: 
+parameters: translation,rotation,scale
+tags: 
+license:  Creative Commons Attribution 4.0 International License.
+licenseUrl:  https://creativecommons.org/licenses/by/4.0/legalcode
+documentationUrl: 
+info: A\sfire\swith\sflame\sanimation

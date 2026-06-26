@@ -184,7 +184,27 @@ class Fire(Supervisor):
             print('No sassafras tree found.')
         else:
             print(f'Starting wildfire in a forest of {n} sassafras trees.')
-            self.ignite(random.choice(self.trees))
+            self.preferred_tree_names = ['Sassafras 25', 'Sassafras 10', 'Sassafras 15']
+            self.next_preferred_index = 0
+            self.ignite_next_preferred_tree()
+
+    def get_tree_by_name(self, name):
+        # Find a tree by its Webots node name.
+        for tree in self.trees:
+            if tree.node.getField('name').getSFString() == name:
+                return tree
+        return None
+
+    def ignite_next_preferred_tree(self):
+        """Ignite the next tree in the preferred order, skipping any already burning or burnt."""
+        while self.next_preferred_index < len(self.preferred_tree_names):
+            name = self.preferred_tree_names[self.next_preferred_index]
+            self.next_preferred_index += 1
+            tree = self.get_tree_by_name(name)
+            if tree is not None and tree.fire is None and tree.fire_count <= 1:
+                self.ignite(tree)
+                return True
+        return False
 
     def ignite(self, tree):
         if tree.fire_count > 1:  # already burnt
@@ -286,6 +306,7 @@ class Fire(Supervisor):
                         extinction.append(self.checkExtinction(tree))
                 
                 if True in extinction:
+                    if not self.ignite_next_preferred_tree():
                         self.ignite(random.choice(self.trees))
             else:
                 for robot in self.robots: # the simulation starts when the mavic got an altitude > 40

@@ -237,7 +237,7 @@ Spot {
 Mavic2Pro {
   translation 4 4 17.4
   rotation 0 0 1 0
-  controller "my_mavic"
+  controller "autonomous_mavic"
   controllerArgs [
     "--target_altitude=45"
     "--patrol_coords=11 11, 21 11, 21 21, 11 21"
@@ -254,7 +254,7 @@ Mavic2Pro {
   translation 4 3 17.43
   rotation 0 0 1 0
   name "Mavic 2 PRO(2)"
-  controller ""
+  controller "autonomous_mavic"
   controllerArgs [
     "--target_altitude=43"
     "--patrol_coord=21 21, 11 21, 11 11, 21 11"

@@ -1,0 +1,11 @@
+Webots Proto Cache File version 1.5
+protoFileHash: 95af24cfa6b662aa4042a31f1bd56d88
+needsRobotAncestor: 0
+baseType: Transform
+slotType: 
+parameters: translation,rotation,scale
+tags: 
+license:  Creative Commons Attribution 4.0 International License.
+licenseUrl:  https://creativecommons.org/licenses/by/4.0/legalcode
+documentationUrl: 
+info: A\ssmoke\sof\sa\sfire\sfrom\sthe\stop
